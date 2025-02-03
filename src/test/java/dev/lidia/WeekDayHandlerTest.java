@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,11 +22,11 @@ public class WeekDayHandlerTest {
     @DisplayName("método para crear lista")
     public void testCreateList() {
 
-        List<String> days = new ArrayList<>();
-
-        String daysName = weekDayHandler.displayTestCreateList(days);
-        assertEquals("monday", daysName);
-
+        List<String> days = weekDayHandler.displayCreateList();
+        assertFalse(days.isEmpty(), "the list isn't empty");
+        assertEquals("monday", days.get(0), "The first day should be Monday");
+        assertEquals("sunday", days.get(6), "the last day should be sunday");
+        assertEquals(7, days.size(), "Are 7 days in the list exactly");
+        }
     }
 
-}
