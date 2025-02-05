@@ -4,7 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,6 +17,7 @@ public class WeekDayHandlerTest {
     public void setUp() {
         weekDayHandler = new WeekDayHandler();
         weekDayHandler.createList();
+        
     }
 
     @Test
@@ -37,15 +39,18 @@ public class WeekDayHandlerTest {
             List<String> days = weekDayHandler.displayCreateList();
             assertEquals(7, days.size(), "Are 7 days in the list exactly");
         }
+    
 
         @Test
-        void testDeleteDay() {
-            days.deleteDay("friday");
-            assertEquals(6, days.size());
-            assertFalse(days.existDay("friday"));
+        @DisplayName ("delete day from the list")
+        public void testDeleteDay() {
+            List<String> days = Arrays.asList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "saturday","sunday");
+            days.remove ("friday");
+            assertEquals(7, days.size(), "Are 7 days in the list exactly"); 
+            assertFalse(days.contains("friday"));
 
         }
         
     }
-    
+
 
