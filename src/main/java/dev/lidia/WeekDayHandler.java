@@ -27,5 +27,9 @@ public class WeekDayHandler {
     public ArrayList<String> displayCreateList() {
         return new ArrayList<>(days);
     }
+    public  int sizeList() {
+        return days.size();
+    }
+    public void deleteDay(String days) {}
 
 }
