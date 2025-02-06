@@ -50,6 +50,13 @@ public class WeekDayHandlerTest {
             assertFalse(days.contains("friday"));
 
         }
+
+        @Test
+        @DisplayName ("get specific day from the list")
+        public void testGetSpecificDay() {
+            assertTrue(days.contains ("monday"));
+            assertFalse(days.contains("conday"));
+        }
         
     }
 

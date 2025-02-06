@@ -32,6 +32,8 @@ public class WeekDayHandler {
     }
     public void deleteDay(String day) {
     days.remove(day);
-    
+    }
+    public void  getSpecificDay() {
+
     }
 }
