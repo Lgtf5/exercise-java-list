@@ -33,7 +33,7 @@ public class WeekDayHandler {
     public void deleteDay(String day) {
     days.remove(day);
     }
-    public void  getSpecificDay() {
-
+    public boolean  getSpecificDay(String day) {
+        return days.contains ( day);
     }
 }

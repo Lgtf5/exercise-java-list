@@ -44,9 +44,9 @@ public class WeekDayHandlerTest {
         @Test
         @DisplayName ("delete day from the list")
         public void testDeleteDay() {
-            List<String> days = Arrays.asList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "saturday","sunday");
+            List<String> days = Arrays.asList("monday", "tuesday", "wednesday", "thursday",  "saturday","sunday");
             days.remove ("friday");
-            assertEquals(7, days.size(), "Are 7 days in the list exactly"); 
+            assertEquals(6, days.size(), "Are 7 days in the list exactly"); 
             assertFalse(days.contains("friday"));
 
         }
@@ -54,6 +54,7 @@ public class WeekDayHandlerTest {
         @Test
         @DisplayName ("get specific day from the list")
         public void testGetSpecificDay() {
+            List<String> days = Arrays.asList("monday", "tuesday", "wednesday", "thursday", "friday", "saturday","sunday");
             assertTrue(days.contains ("monday"));
             assertFalse(days.contains("conday"));
         }
