@@ -36,5 +36,7 @@ public class WeekDayHandler {
     public boolean  getSpecificDay(String day) {
         return days.contains ( day);
     }
-    
+    public boolean getSpecificDayIfExists(String day) {
+        return days.contains(day);
+    }
 }

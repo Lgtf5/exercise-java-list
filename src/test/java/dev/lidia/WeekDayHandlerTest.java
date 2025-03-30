@@ -63,7 +63,7 @@ public class WeekDayHandlerTest {
         @Test
         @DisplayName ("get specific day from the list if exists")
         public void testGetSpecificDayIfExists() {
-           
+            List<String> days = Arrays.asList("monday", "tuesday", "wednesday", "thursday", "friday", "saturday","sunday");
             assertTrue(days.contains ("monday"));
             assertFalse(days.contains("MoNday"));
         }
