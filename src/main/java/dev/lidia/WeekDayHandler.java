@@ -4,15 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WeekDayHandler {
-
-    private List<String> days;
-
+    private final List<String> days;
     public WeekDayHandler() {
-        this.days = new ArrayList<String>();
+        this.days = new ArrayList<>();
     }
 
     public void createList() {
-
         days.clear();
         days.add("monday");
         days.add("tuesday");
@@ -21,27 +18,26 @@ public class WeekDayHandler {
         days.add("friday");
         days.add("saturday");
         days.add("sunday");
-
     }
 
-    public ArrayList<String> displayCreateList() {
+    public List<String> displayCreateList() {
         return new ArrayList<>(days);
     }
     public  int sizeList() {
         return days.size();
     }
-    public void deleteDay(String day) {
-    days.remove(day);
+    public boolean deleteDay(String day) {
+        return days.remove(day);
     }
     public boolean  getSpecificDay(String day) {
-        return days.contains ( day);
+        return days.contains(day);
     }
     public boolean getSpecificDayIfExists(String day) {
-        return days.contains(day);
+        return days.stream().anyMatch(d -> d.equalsIgnoreCase(day));
     }
     public List<String> orderListByAlphabeticalOrder() {
         List<String> orderDays = new ArrayList<>(days);
-        orderDays.sort(String::compareToIgnoreCase);
+        orderDays.sort(String.CASE_INSENSITIVE_ORDER);
         return orderDays;
     }
     public void emptyList() {

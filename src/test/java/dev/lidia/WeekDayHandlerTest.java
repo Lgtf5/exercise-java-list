@@ -1,9 +1,10 @@
 package dev.lidia;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.print.attribute.DateTimeSyntax;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -20,13 +21,13 @@ public class WeekDayHandlerTest {
         weekDayHandler = new WeekDayHandler();
         weekDayHandler.createList();        
     }
-
-
+    private List<String> getDefaultDays() {
+        return Arrays.asList("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday");
+    }
 
     @Test
     @DisplayName("create list method")
     public void testCreateList() {
-
         List<String> days = weekDayHandler.displayCreateList();
         assertFalse(days.isEmpty(), "the list isn't empty");
         assertEquals("monday", days.get(0), "The first day should be Monday");
@@ -34,46 +35,39 @@ public class WeekDayHandlerTest {
         assertEquals(7, days.size(), "Are 7 days in the list exactly");
         }
         
-            
-
         @Test
         @DisplayName ("size list return method")
         public void testSizeList() {
-            List<String> days = weekDayHandler.displayCreateList();
-            assertEquals(7, days.size(), "Are 7 days in the list exactly");
+            assertEquals(7, weekDayHandler.sizeList());
         }
     
-
         @Test
         @DisplayName ("delete day from the list")
         public void testDeleteDay() {
-            List<String> days = Arrays.asList("monday", "tuesday", "wednesday", "thursday",  "saturday","sunday");
-            days.remove ("friday");
-            assertEquals(6, days.size(), "Are 7 days in the list exactly"); 
+            List<String> days = new ArrayList<>(getDefaultDays());
+            days.remove("friday");
+            assertEquals(6, days.size(), "Are 6 days in the list exactly"); 
             assertFalse(days.contains("friday"));
-
         }
 
         @Test
         @DisplayName ("get specific day from the list")
         public void testGetSpecificDay() {
-            List<String> days = Arrays.asList("monday", "tuesday", "wednesday", "thursday", "friday", "saturday","sunday");
-            assertTrue(days.contains ("monday"));
-            assertFalse(days.contains("conday"));
+            assertTrue(weekDayHandler.getSpecificDay("monday"));
+            assertFalse(weekDayHandler.getSpecificDay("conday"));
         }
 
         @Test
         @DisplayName ("get specific day from the list if exists")
         public void testGetSpecificDayIfExists() {
-            List<String> days = Arrays.asList("monday", "tuesday", "wednesday", "thursday", "friday", "saturday","sunday");
-            assertTrue(days.contains ("monday"));
+            List<String> days = getDefaultDays();
             assertFalse(days.contains("MoNday"));
         }
 
         @Test
         @DisplayName ("get order list in alphabetical order")
         public void testOrderListByAlphabeticalOrder() {
-            List<String> days = weekDayHandler.displayCreateList();
+            
             List<String> orderDays = weekDayHandler.orderListByAlphabeticalOrder();
 
             String[] expectedOrder = {"friday", "monday", "saturday", "sunday", "thursday", "tuesday", "wednesday"};
@@ -83,10 +77,12 @@ public class WeekDayHandlerTest {
         @Test
         @DisplayName ("empty list") 
         public void testEmptyList() {
-            List<String> days = weekDayHandler.displayCreateList();
-            assertEquals(7,days.size());
+            List<String> days = new ArrayList<>();
             days.clear();
             assertTrue(days.isEmpty());
+        
+
+        
         }
 }
 
