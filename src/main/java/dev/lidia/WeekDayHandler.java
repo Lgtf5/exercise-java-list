@@ -39,5 +39,9 @@ public class WeekDayHandler {
     public boolean getSpecificDayIfExists(String day) {
         return days.contains(day);
     }
-
+    public List<String> orderListByAlphabeticalOrder() {
+        List<String> orderDays = new ArrayList<>(days);
+        orderDays.sort(String::compareToIgnoreCase);
+        return orderDays;
+    }
 }

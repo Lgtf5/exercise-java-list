@@ -17,6 +17,8 @@
 <error line="37" column="30" severity="error" message="&apos;(&apos; está precedido de espacio en blanco." source="com.puppycrawl.tools.checkstyle.checks.whitespace.MethodParamPadCheck"/>
 <error line="37" column="30" severity="error" message="&apos;(&apos; está seguido de espacios en blanco." source="com.puppycrawl.tools.checkstyle.checks.whitespace.ParenPadCheck"/>
 <error line="39" column="5" severity="error" message="&apos;METHOD_DEF&apos; debe estar separado de la línea anterior." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="42" column="5" severity="error" message="&apos;METHOD_DEF&apos; debe estar separado de la línea anterior." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="42" column="5" severity="error" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
 </file>
 <file name="L:\BOOTCAMP FULLSTACK\factoriaf5-proyectos\talleres clase\ARANCHA\JAVA_TDD_List\list\src\test\java\dev\lidia\WeekDayHandlerTest.java">
 <error line="9" column="1" severity="error" message="Orden incorrecto para el import &apos;org.junit.jupiter.api.BeforeEach&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck"/>
