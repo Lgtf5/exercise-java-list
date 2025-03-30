@@ -1,14 +1,14 @@
 package dev.lidia;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 public class WeekDayHandlerTest {
     private WeekDayHandler weekDayHandler;
@@ -16,9 +16,10 @@ public class WeekDayHandlerTest {
     @BeforeEach
     public void setUp() {
         weekDayHandler = new WeekDayHandler();
-        weekDayHandler.createList();
-        
+        weekDayHandler.createList();        
     }
+
+
 
     @Test
     @DisplayName("create list method")
@@ -57,6 +58,14 @@ public class WeekDayHandlerTest {
             List<String> days = Arrays.asList("monday", "tuesday", "wednesday", "thursday", "friday", "saturday","sunday");
             assertTrue(days.contains ("monday"));
             assertFalse(days.contains("conday"));
+        }
+
+        @Test
+        @DisplayName ("get specific day from the list if exists")
+        public void testGetSpecificDayIfExists() {
+           
+            assertTrue(days.contains ("monday"));
+            assertFalse(days.contains("MoNday"));
         }
         
     }
