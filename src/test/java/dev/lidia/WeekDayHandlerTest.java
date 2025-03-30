@@ -3,6 +3,8 @@ package dev.lidia;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.print.attribute.DateTimeSyntax;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -76,8 +78,16 @@ public class WeekDayHandlerTest {
 
             String[] expectedOrder = {"friday", "monday", "saturday", "sunday", "thursday", "tuesday", "wednesday"};
             assertTrue(Arrays.equals(expectedOrder, orderDays.toArray()), "The list is not in alphabetical order");
-    }
-
+        }
+        
+        @Test
+        @DisplayName ("empty list") 
+        public void testEmptyList() {
+            List<String> days = days.displayCreateList();
+            assertEquals(7,days.size());
+            days.clear();
+            assertTrue(days.isEmpty());
+        }
 }
 
 
