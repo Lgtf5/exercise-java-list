@@ -83,7 +83,7 @@ public class WeekDayHandlerTest {
         @Test
         @DisplayName ("empty list") 
         public void testEmptyList() {
-            List<String> days = days.displayCreateList();
+            List<String> days = weekDayHandler.displayCreateList();
             assertEquals(7,days.size());
             days.clear();
             assertTrue(days.isEmpty());

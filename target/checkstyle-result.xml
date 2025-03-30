@@ -19,6 +19,7 @@
 <error line="39" column="5" severity="error" message="&apos;METHOD_DEF&apos; debe estar separado de la línea anterior." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
 <error line="42" column="5" severity="error" message="&apos;METHOD_DEF&apos; debe estar separado de la línea anterior." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
 <error line="42" column="5" severity="error" message="Falta el comentario Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="47" column="5" severity="error" message="&apos;METHOD_DEF&apos; debe estar separado de la línea anterior." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
 </file>
 <file name="L:\BOOTCAMP FULLSTACK\factoriaf5-proyectos\talleres clase\ARANCHA\JAVA_TDD_List\list\src\test\java\dev\lidia\WeekDayHandlerTest.java">
 <error line="6" column="1" severity="error" message="Separación extra en el grupo de importación antes &apos;javax.print.attribute.DateTimeSyntax&apos;" source="com.puppycrawl.tools.checkstyle.checks.imports.ImportOrderCheck"/>

@@ -44,4 +44,7 @@ public class WeekDayHandler {
         orderDays.sort(String::compareToIgnoreCase);
         return orderDays;
     }
+    public void emptyList() {
+        days.clear();
+    }
 }
