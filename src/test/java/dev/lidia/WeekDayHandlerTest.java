@@ -67,7 +67,17 @@ public class WeekDayHandlerTest {
             assertTrue(days.contains ("monday"));
             assertFalse(days.contains("MoNday"));
         }
-        
+
+        @Test
+        @DisplayName ("get order list in alphabetical order")
+        public void testOrderListByAlphabeticalOrder() {
+            List<String> days = weekDayHandler.displayCreateList();
+            List<String> orderDays = weekDayHandler.orderListByAlphabeticalOrder();
+
+            String[] expectedOrder = {"friday", "monday", "saturday", "sunday", "thursday", "tuesday", "wednesday"};
+            assertTrue(Arrays.equals(expectedOrder, orderDays.toArray()), "The list is not in alphabetical order");
     }
+
+}
 
 

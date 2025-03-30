@@ -39,4 +39,5 @@ public class WeekDayHandler {
     public boolean getSpecificDayIfExists(String day) {
         return days.contains(day);
     }
+
 }
